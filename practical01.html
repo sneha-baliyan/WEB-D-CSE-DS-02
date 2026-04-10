@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Salary Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .employee {
+            margin: 5px 0;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Employees with Salary Greater Than 50,000</h2>
+    <div id="output"></div>
+
+    <script>
+        // Employee data
+        const employees = [
+            { id: 1, name: "Amit", salary: 45000 },
+            { id: 2, name: "Neha", salary: 60000 },
+            { id: 3, name: "Rahul", salary: 75000 },
+            { id: 4, name: "Sneha", salary: 30000 }
+        ];
+
+        // Filter employees
+        const highSalaryEmployees = employees.filter(emp => emp.salary > 50000);
+
+        // Display results
+        const outputDiv = document.getElementById("output");
+
+        highSalaryEmployees.forEach(emp => {
+            const div = document.createElement("div");
+            div.className = "employee";
+            div.textContent = `ID: ${emp.id}, Name: ${emp.name}, Salary: ${emp.salary}`;
+            outputDiv.appendChild(div);
+        });
+    </script>
+
+</body>
+</html>
